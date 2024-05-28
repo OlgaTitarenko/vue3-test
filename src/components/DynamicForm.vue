@@ -35,7 +35,6 @@ import { reactive, ref, computed } from 'vue';
   };
   
   const highlightSearch = () => {
-    // Trigger reactivity for the highlight mechanism
   };
   
   const searchFieldHighlighted = computed(() => {
