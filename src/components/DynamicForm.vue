@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, ref, computed } from 'vue';
+import { reactive, ref } from 'vue';
   
   interface Field {
     id: number;
@@ -33,13 +33,7 @@ import { reactive, ref, computed } from 'vue';
   const highlightField = (value: string) => {
     return searchText.value && value.includes(searchText.value);
   };
-  
-  const highlightSearch = () => {
-  };
-  
-  const searchFieldHighlighted = computed(() => {
-    return fields.some(field => field.value.includes(searchText.value));
-  });
+
 </script>
 
 <template>
@@ -49,9 +43,7 @@ import { reactive, ref, computed } from 'vue';
       <input
         type="text"
         v-model="searchText"
-        @input="highlightSearch"
         placeholder="Search..."
-        :class="{highlight: searchFieldHighlighted}"
       />
     </label>
     <form @submit.prevent>
